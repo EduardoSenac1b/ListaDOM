@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <p id="textoPadrao">Este é o texto padrão.</p>
+    <button id="botaoMudarTexto">Mudar Texto</button>
+</body>
+<script>
+    document.getElementById('botaoMudarTexto').onclick = function() {
+        let novoTexto = prompt('Digite o novo texto:');
+        if (novoTexto !== null) {
+            document.getElementById('textoPadrao').innerText = novoTexto;
+        }
+    };
+</script>
+</html>

@@ -1,0 +1,39 @@
+!<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .invisivel {
+        display: none;
+    }
+</style>
+<body>
+    <button id="botao">Mostrar</button>
+    <p id="textoEscondido" class="invisivel">Esta é a frase escondida!</p>
+</body>
+<script>
+    let visiblidade = false;
+
+    document.getElementById('botao').onclick = function() {
+        visiblidade = !visiblidade;
+        document.getElementById('textoEscondido').classList.toggle('invisivel', !visiblidade);
+        this.innerText = visiblidade ? 'Ocultar' : 'Mostrar';
+    };
+</script>
+</html>
