@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Itens à Lista</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background-color: #f0f0f0;
+      margin: 5px 0;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="adicionarItem()">Adicionar Item</button>
+  <ul id="lista"></ul>
+
+  <script>
+    function adicionarItem() {
+      const item = prompt("Digite o item a ser adicionado:");
+      if (item) {
+        const li = document.createElement('li');
+        li.innerText = item;
+        document.getElementById('lista').appendChild(li);
+      }
+    }
+  </script>
+
+</body>
+</html>
