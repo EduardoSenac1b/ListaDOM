@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votação Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    #candidato-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #candidato-info img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="votar()">Votar</button>
+  <div id="candidato-info"></div>
+
+  <script>
+    // Definindo candidatos com nome, foto e votos
+    const candidatos = {
+      "1": { nome: "João", foto: "https://www.camara.leg.br/internet/deputado/bandep/215043.jpgmaior.jpg", votos: 0 },
+      "2": { nome: "Maria", foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz7oiw_-auKfbjYiFChU1YxrTYoY2_TAJbAw&s", votos: 0 },
+      "3": { nome: "Pedro", foto: "https://www.camara.leg.br/internet/deputado/bandep/160604.jpgmaior.jpg", votos: 0 }
+    };
+
+    function votar() {
+      const numero = prompt("Digite o número do candidato:");
+      const candidato = candidatos[numero] || { nome: "Voto Nulo", foto: "https://via.placeholder.com/150?text=Nulo" };
+
+      if (candidatos[numero]) candidato.votos++;
+      document.getElementById('candidato-info').innerHTML = `
+        <h2>${candidato.nome}</h2>
+        <img src="${candidato.foto}" alt="${candidato.nome}">
+        <p>Confirmar?</p>
+      `;
+
+      // Exibe os votos no console para os candidatos válidos
+      if (candidatos[numero]) console.log(`Votos para ${candidato.nome}: ${candidato.votos}`);
+    }
+  </script>
+
+</body>
+</html>
